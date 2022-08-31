@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="Style/bootstrap.min.css" rel="stylesheet">
+    <link href="./Style/CalculatorStyleFolder/calculatorStyle.css" rel="stylesheet" type="text/css">
+<!--<link href="Style/DanjumaStyles.css" rel="stylesheet" type="text/css"/>-->
+<!--<link href="Style/bootstrap.min.css" rel="stylesheet">-->
+    <title> Sunday Calculator</title>
+
+
+</head>
+<!--<style>td{border-width: 2px;border-style: solid;}
+    </style>-->
+
+
+<body class="myBody" onload="myFunction()">
+<div class="container" style="text-align:center;" >
+<div style="display:none;">
+<input type="text" id="txtFirst" value="" style="width:80px;" name="">
+<input type="text" id="txtOperation" style="width:40px;" name="">
+<input type="text" id="txtSecond" style="width:80px;" name="">
+<input id="decimalPlaces" style="width:40px;" value="2"/></div>
+<div class="" style="margin-top:50px;overflow-x:auto;padding:20px;background-color:#00FA9A;border-radius:12px;">
+
+<!-- <label style="background-color:white;width:100%;margin:auto;" class="">NUM</label> -->
+<table style="margin:auto;" class="">
+
+    <tr style="text-align:right;"><td  id="txtEquationOld" style="background-color:white;height:50px;font-size:30px;text-align:right;border-radius:15px 15px 0 0;display:inline-blockblock;padding-right:20px;border: none;" colspan="7"><input id="txtEquation" readonly oninput="this.value = this.value.replace(/[^0-9.+/*-]/g, '').replace(/(\..*)\./g, '$1');"  style="width:98%;color:darkblue;text-align:right;border: none;" class=""/></td> </tr>
+
+    <tr style="text-align:right"><td id="txtAnswerOld" style="background-color:white;height:80px;font-size:50px;font-weight:bolder;text-align:right;border-radius:0 0 15px 15px;padding-right:20px;;display:inline-blockblock;" colspan="7"><input id="txtAnswer" readonly style="width:98%;color:darkblue;text-align:right;border:none;border-radius:0 0 15px 15px;" class=""/></td> </tr>
+
+<tr><td><button id="1" accesskey="" onClick="moveOn(this.id);"  class="button num" title="1">1</button></td>
+<td><button id="2" class="button num" onClick="moveOn(this.id);" title="2">2</button></td>
+<td><button id="3" class="button num" onClick="moveOn(this.id);" title="3">3</button></td>
+<td><button id="+" class="button oper" onClick="enterOps(this.id,this.innerText);getInnerText(this.innerText);" title="+">+</button></td>
+<td><button id="-" class="button oper" onClick="enterOps(this.id,this.innerText);getInnerText(this.innerText);" title="-">-</button></td>
+<td><button id="cos" class="button science" onClick="enterOps(this.id,this.innerText);cleanDisplay();" title="cos">cos</button></td>
+<td><button id="tan" class="button science" onClick="enterOps(this.id,this.innerText);cleanDisplay();" title="tan">tan</button></td></tr>
+
+<tr><td><button id="4" onClick="moveOn(this.id);" class="button num"  title="4" >4</button></td>
+<td><button id="5" onClick="moveOn(this.id);" class="button num" title="5" >5</button></td>
+<td><button id="6" onClick="moveOn(this.id);" class="button num" title="6" >6</button></td>
+<td><button id="*" onClick="enterOps(this.id,this.innerText);" class="button oper" title="X" name="X" >x</button></td>
+<td><button id="/" onClick="enterOps(this.id,this.innerText);" class="button oper" title="÷" >÷</button></td>
+<td><button id="sin" onClick="enterOps(this.id);cleanDisplay();" class="button science" title="sin">sin</button></td>
+<td><button id="sqrt" onClick="enterOps(this.id);cleanDisplay();" class="button science" title="√">√</button></td></tr>
+
+<tr><td><button id="7" onClick="moveOn(this.id);" class="button num" title="7" >7</button></td>
+<td><button id="8" onClick="moveOn(this.id);" class="button num" title="8" >8</button></td>
+<td><button id="9" onClick="moveOn(this.id);" class="button num" title="9" >9</button></td>
+<td><button id="=" onClick="performArithmetic();" class="button oper" style="font-size: 30px;" title="Equals" >=</button></td>
+<td><button id="C" onClick="clearScreen();" class="button oper" title="Reset" >C</button></td>
+<td><button id="exp" onClick="enterOps(this.id,this.innerText);cleanDisplay();" class="button science" title="Exponent">exp</button></td>
+<td><button id="round" onClick="enterOps(this.id,this.innerText);roundNow();" class="button science" title="Round">rnd</button></td></tr>
+
+<tr><td><button id="0" onClick="moveOn(this.id);" class="button num" title="0">0</button></td>
+<td><button id="." onClick="moveOn(this.id);checkDecimal();" class="button num" title="." >.</button></td>
+<!-- <td></td> -->
+<td class="" colspan="2"><button id="tog" onClick="toggleValue();" style="max-width:200px;min-width:120px;float:left;" class="button num" style="" title="toggle" >+/-</button></td>
+ <td>
+     <table style="width:100%;height:100%;font-weight:900;color: darkred"><tr><td><input type="radio" name="DegOrRad" id="deg" onchange="getRadioValue()" value="Degrees" checked="checked"  >  Deg</td></tr>
+         <tr><td><input type="radio" onchange="getRadioValue()" value="Radians" name="DegOrRad" id="rad"> Rad</td></tr>
+     </table></td>
+    <td colspan="2">
+       <table style="height: 100%;width: 100%;">
+           <tr>
+               <td style="width:30%;margin: 0;padding: 0;" ><table style="width:100%;height:100%;font-weight:900;color: darkred;margin: 0;padding: 0;">
+         <tr><td style="">
+         <label for="Dcp" style="margin-bottom:0 ">DcP</label>
+<select name="DcP" id="DcP" onchange="myFunction(this.selectedIndex);">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2" selected="selected">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select></td></tr>
+     </table></td>
+          <td style="width:70%;" ><button id="" onClick="enterOps(this.id,this.innerText);cleanDisplay();"  style="min-width:140px;max-width:200px;float:right;" class="button science" title="logarithm" >log</button></td>
+           </tr>
+       </table>
+
+    </td>
+
+<!--<td colspan="2"><button id="log" onClick="enterOps(this.id,this.innerText);cleanDisplay();"  style="min-width:140px;max-width:200px;float:right;" class="button science" title="logarithm" >log</button></td>-->
+
+</tr>
+<!-- <td></td> -->
+</table>
+
+</div>
+</div>
+</body>
+    <script type="text/javascript" src="./JavaScript/calculatorScripts/danjumaCalculatorScript.js"></script>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+	 <head>
+     
+	      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--ICONS-->
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+
+    
+    
+    
+	 <title>Ameh Survey Form</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Survey Form</title>
+      
+		<style>
+		body {
+    text-align: center;background-color:AliceBlue;
+}
+form {
+    display: inline-block;
+}
+label{float:left; padding:  0;}
+table{float:left;width:100%; padding:  0 ;}
+input{border-radius:5px}
+
+.myLabels{font-weight:800; color:blue;margin-top:15px;width:100%;}
+input{color:darkblue;font-weight:600;}
+.mySpace{margin-bottom: 5px;}
+            table{width: 250px;margin: auto;font-size: 20px;}
+            td{padding-left: 50px;}
+            tr{width: 100%}
+            
+            
+            input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+}
+
+            
+            
+            
+            
+            * Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+            
+            
+       .button:focus {
+  outline: none;
+}         
+/*   ////////         */
+            
+            
+            
+            
+		</style>
+		
+		</head>
+		<body>
+		
+		
+		 <div class="container" style="margin: auto">
+		 
+				
+		<h1>Survey Form</h1>
+		<form action="" style="max-width:400px;" id="myForm">
+		
+		
+		
+
+            <label id="nameLabel" style="color:blue;background-color: yellow;padding:2px 15px 2px 15px;width:100%; visibility: hidden;">Please Enter Name <span class="glyphicon glyphicon-circle-arrow-down" style="color:black;background-color: white;font-size: large;vertical-align: middle;border-radius: 50%;"></span></label>	
+
+<div class="form-group mySpace" style="">
+<!--  <label class="col-md-12 text-left" >Full Name</label> -->
+<!--    <div class="col-md-12 inputGroupContainer">-->
+    <div class="input-group" onmouseover="mouseNameEnter();" onmouseout="mouseNameHide();" >
+  <span class="input-group-addon" ><i class="glyphicon glyphicon-user"></i></span>
+        <input class="form-control" type="text" id="diName" name="name" value="" placeholder="Enter Name" style="text-transform:capitalize;color:darkblue;" autofocus="autofocus" onblur="checkName(this.value);" onkeyup="countLength()" />   
+
+    </div>
+  </div>
+<!--</div>-->
+
+            <label id="phoneLabel" style="color:blue;background-color: yellow;padding:2px 15px 2px 15px;width:100%;visibility: hidden ">Enter Phone Number <span class="glyphicon glyphicon-circle-arrow-down" style="color:black;background-color: white;font-size: large;vertical-align: middle;border-radius: 50%;"></span></label>	
+<div class="form-group mySpace" style="">
+<!--  <label class="col-md-12 text-left">Contact No.</label>  -->
+<!--    <div class="col-md-12 inputGroupContainer">-->
+    <div class="input-group"  onmouseover="mousePhoneEnter();" onmouseout="mousePhoneHide();" >
+       
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        
+  <input class="form-control" type="tel" id="phone" name="phone" value="" placeholder="Phone #" onkeyup="checkPhoneLength();" oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*)\./g, '$1');"  onblur="checkPhone(this.value);" ><br>
+    </div>
+  </div>
+<!--</div>-->
+<!--	<br/>-->
+
+<label id="emailLabel" style="color:blue;background-color: yellow;padding:2px 15px 2px 15px;width:100%; visibility: hidden">Please Enter Email <span class="glyphicon glyphicon-circle-arrow-down" style="color:black;background-color: white;font-size: large;vertical-align: middle;border-radius: 50%;"></span></label>	
+
+	<!-- Text input-->
+<div class="form-group mySpace" style="">
+<!--  <label class="col-md-12 text-left">E-Mail</label>  -->
+<!--    <div class="col-md-12 inputGroupContainer">-->
+    <div class="input-group" onmouseover="mouseMailEnter();" onmouseout="mouseMailHide();">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input class="form-control" type="text" id="email" type="email" name="email" value="" style="text-transform:lowercase;color:darkblue;" placeholder="Email" onblur="checkEmail(this.value);" >
+         </div>
+  </div>
+
+   
+   <div class="form-group mySpace" style="margin-top: 35px;">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down "></i></span>
+   
+    <select class="form-control myLabels" id="gender" style="color:gray;margin: auto;width: 100%;"  >
+	<option value="">Select Gender</option>
+      <option value="Male"  style="color:blue;">Male</option>
+      <option value ="Female" style="color:red;">Female</option>
+      <option value="Others" style="color:blue">N/A</option>
+      
+    </select>
+        </div></div>
+<div class="form-group mySpace" style="width:100%">
+<div style="width:100%">
+<h4>  <label for="DOB" class ="myLabels" >Date of Birth:</label></h4><br>
+    <label id="birthDay" style="color:green;width:100%;visibility: hidden" >.</label>
+  <input type="date" id="DOB" name="DOB"  value="" style="width:200px;height: 35px;" onchange="handler(event);">
+  
+    </div></div>
+<!--
+  <div style="width:100%;display: none;">
+  <div style="width:200px;margin: auto;">
+ <h4> <label style="text-decoration: underline;" for="project" class ="myLabels">Project Selection</label></h4>
+      </div>
+  <div style="width:250px;margin: auto">
+  
+  <table style="margin-top:10px;"><tr>
+    <td> <label for="project1"> project 1</label><input type="checkbox" id="project" name="project1" value="project 1">
+  </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" id="project2" name="project" value="project 2">
+  <label for="project2"> project 2</label></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" id="project3" name="project" value="project 3">
+  <label for="project3"> project 3</label></td>
+  </tr>
+  </table>
+  </div>
+  </div>
+-->
+  
+  
+  
+  
+  <div>
+  <div >
+  <h4 style="width:100%;"><label for="message" class="myLabels"   >Message:</label></h4>
+  <br/>
+  <textarea name="message"  rows="3"style="width:200px;margin-top: 5px;" cols="" placeholder="Please Enter Message"></textarea>
+  
+  </div>
+  </div>
+ <br>
+  
+  
+  <br>
+  <input type="=button" value="Reset Form" class="button btn btn-danger" onclick="resetForm();" readonly style="float:left;color:white;padding:10px;border: none;"/>
+  
+  
+  <input type="=button" id="btnSubmit"  value="Submit Form" class="button btn btn-primary" style="float:right;color:white;padding:10px;border: none;" readonly onclick="checkValid();" onmouseover="changecolor()"
+  onmouseout="returnColor()"/>
+  
+  
+</form> 
+		</div>
+		
+		</body>
+		
+		<script>
+		function checkValid(){
+            var myName = document.getElementById("diName").value;
+            var bareName=document.getElementById("diName");
+            var myPhone = document.getElementById("phone").value;
+            var barePhone= document.getElementById("phone");
+            var myEmail=document.getElementById("email").value;
+            var bareEmail=document.getElementById("email");
+            var len =myName.length;
+	 if(len==""){
+	 alert("Please enter Your Name");
+         document.getElementById("diName").style.backgroundColor="Aqua";
+         bareName.focus();
+	 return false;
+	 }
+        else if(len<"5"){
+	       alert("Please Your Name Should be at least 5 Characters");
+            document.getElementById("diName").style.backgroundColor="#FFFF99";
+            bareName.focus();
+	       return false;
+	 }
+        else{
+            document.getElementById("diName").style.backgroundColor="#fff";
+            bareName.style.color="darkblue";
+        }
+            
+    if (myPhone==""){
+         alert("Please Enter Your Phone Number");
+         document.getElementById("phone").style.backgroundColor="Aqua";
+                barePhone.focus();
+		return false;
+		} 
+            else if (myPhone.includes("_")){
+                alert("Please Enter Your COMPLETE Phone Number");
+                document.getElementById("phone").style.backgroundColor="#FFFF99";
+                barePhone.focus();
+                return false;
+		}
+            else{
+             document.getElementById("phone").style.backgroundColor="#fff";   
+             barePhone.style.color="darkblue";   
+        }
+            
+            if(myEmail==""){
+	           alert("Please Enter Your Email Address");
+                bareEmail.style.color="red";
+                bareEmail.style.backgroundColor="#FFFF99";
+                bareEmail.focus();
+	 return false;
+            }
+            if(myEmail.startsWith("@")){
+	 alert("email must not Start with @ Symbol");
+                bareEmail.style.color="red";
+                bareEmail.style.backgroundColor="#FFFF99";
+                bareEmail.focus();
+	 return false;
+	 }
+	 if(!(myEmail.includes("@"))){
+	       alert("email must contain @ symbol");
+            bareEmail.style.color="red";
+            bareEmail.style.backgroundColor="#FFFF99";
+            bareEmail.focus();
+	       return false;
+	 }
+	 if(!(myEmail.includes("."))){
+	           alert("email must contain fullstop symbol");
+                bareEmail.style.color="red";
+                bareEmail.style.backgroundColor="#FFFF99";
+                bareEmail.focus();
+	 return false;
+	 }
+            if(myEmail.includes("@.")){
+	           alert("Fullstop symbol cannot immediately precede the @ symbol");
+                bareEmail.style.color="red";
+                bareEmail.style.backgroundColor="#FFFF99";
+                bareEmail.focus();
+	           return false;
+	       }
+            
+            if(myEmail.endsWith(".")){
+	           alert("email must not end with a period sign");
+                bareEmail.style.color="red";
+                bareEmail.style.backgroundColor="#FFFF99";
+                bareEmail.focus();
+	           return false;
+	 }
+            else{
+                bareEmail.style.color="darkblue";
+                bareEmail.style.backgroundColor="#fff";
+            }
+            
+        let myGender="";
+        myGender =  document.getElementById("gender").value;
+        if(myGender=="")
+            {
+               alert("Please Select Your Gender");
+                return false;
+            }
+        else{
+                //submit();
+                alert("Thank you "+ myName.toUpperCase() +" Your details have been successfully entered");  //This will be in submission method in case of mail send failure
+                resetForm();
+                    }
+            }
+		
+		function changecolor(){
+		document. getElementById('btnSubmit'). style. backgroundColor = 'green';
+		}
+		
+		function returnColor(){
+		//alert("yes");
+		document. getElementById('btnSubmit'). style. backgroundColor = 'dodgerblue';
+		}
+            function checkPhoneLength(){
+                let phoneEntered=document.getElementById("phone").value;
+                if(phoneEntered.includes("_")){ //alert(phoneLenght);
+                    document.getElementById("phone").style.color="red";
+                }
+                else{
+                    document.getElementById("phone").style.color="darkblue";
+                    document.getElementById("phone").style.backgroundColor="#fff";
+                }
+            }
+    
+		</script>
+		<script>
+		$(window).load(function()
+{
+        var phones = [{ "mask": "###-###-####"}];
+        $('#phone').inputmask({ 
+        mask: phones, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+});
+</script>
+   
+    <script>
+    function mouseNameEnter(){
+        $("#nameLabel").css('visibility', 'visible');
+    }
+        function mouseNameHide(){
+            $("#nameLabel").css('visibility', 'hidden');
+        }
+        function mousePhoneEnter(){
+            $("#phoneLabel").css('visibility', 'visible');
+    }
+        function mousePhoneHide(){
+            $("#phoneLabel").css('visibility', 'hidden');
+        }
+        
+        function mouseMailEnter(){
+            $("#emailLabel").css('visibility', 'visible');
+    }
+        function mouseMailHide(){
+            $("#emailLabel").css('visibility', 'hidden');
+        }
+        function handler(e){
+              
+            var birthD=e.target.value;
+            var d=new Date(birthD);
+            document.getElementById("birthDay").innerHTML=d.toString().substring(0,15);
+            $("#birthDay").css('visibility', 'visible');
+}
+        document.addEventListener("keydown", dealWithKeyboard, false);
+        function dealWithKeyboard(event) {
+        if (event.keyCode === 13 || event.keyCode==187|| event.keyCode==61) {
+        event.preventDefault();
+        document.getElementById("btnSubmit").click();
+        document.getElementById("btnSubmit").style.backgroundColor="green"; 
+        document.getElementById("btnSubmit").style.color="yellow"; 
+        setTimeout(function() {
+        document.getElementById("btnSubmit").style.backgroundColor="dodgerblue";
+        document.getElementById("btnSubmit").style.color="white";
+   }, 1000);
+  } 
+        }
+        
+        function countLength(){
+            let clientCount=document.getElementById("diName");
+            let clientName=document.getElementById("diName").value;
+            let clientNameLength=clientName.length;
+            
+            if(clientNameLength==0){
+                clientCount.style.backgroundColor="#fff";
+            }
+            else if(clientNameLength<5){
+                clientCount.style.color="red";
+                clientCount.style.backgroundColor="#FFFF99";
+            }
+            else{
+                clientCount.style.color="darkblue";
+                clientCount.style.backgroundColor="#fff";
+            }
+            if(clientNameLength>20){
+                let shortName=clientName.substring(0,20);
+                alert(clientName+" Exceeds 20 Character Limit. Name Cut to "+ shortName);
+                document.getElementById("diName").value=shortName;
+            }
+        }
+        
+        function resetForm(){
+            
+                document.getElementById("myForm").reset();
+                $("#birthDay").css('visibility', 'hidden');  
+               // document.getElementById("birthDay").style.visibility = "hidden";
+                $("#DOB").val("");
+                document.getElementById("diName").style.backgroundColor="#fff";
+                document.getElementById("phone").style.backgroundColor="#fff"; 
+                document.getElementById("email").style.backgroundColor="#fff";
+            
+            let curserPosition=document.getElementById("diName");
+                curserPosition.focus();
+        }
+        
+    </script>
+		
+		
+		</html>

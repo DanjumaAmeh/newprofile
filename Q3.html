@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+	.dan{
+	height:50px;
+	}
+	.myRightNav{float:right;margin-right:50px;}
+	body {
+  position: relative;
+}
+	</style>
+       
+<link href="Style/bootstrap.min.css" rel="stylesheet"/>
+<link href="Style/DanjumaStyles.css" rel="stylesheet" type="text/css"/>
+<link href="Style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+ 
+<title>Danjuma Profile</title>
+
+</head>
+
+<body data-spy="scroll" data-target=".top" data-offset="0" >
+<div class="topnav sticky-top" id="myTopnav" style="">
+ 
+<a href="#" style="display:none" class="" ></a>
+  <a href="#contact"  class="myRightNav" id="contactNav" onClick="makeContactActive();" style="">Contact</a>
+  <a href="#about" class="myRightNav" onClick="makeAboutActive();" id="aboutNav" style="">About</a>
+   <a href="#Portfolio" class="myRightNav" onClick="makePortfolioActive();" id="PortfolioNav" style="">Portfolio</a>
+   
+      <!-- Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon -->
+  <a href="javascript:void(0);" class="icon sticky-top" onclick="myFunction()" style="">
+    <i class="fa fa-bars sticky-top" style=""></i>
+  </a>
+</div>
+
+<div  class="container">  <!--style="margin:0 30px 20px 30px;" -->
+
+
+<!--Modal Start -->
+ 
+
+<!-- Trigger/Open The Modal -->
+<button id="btnOpenModal" style="display:none;">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" style="background-image: url('C:/Users/danju/Desktop/WebTechAssignment/image/christianRegg.jpg');background-size:cover;background-repeat:no-repeat;background-position:center center;">
+
+  <!-- Modal content -->
+  <div class="modal-content"  style="border-radius:12px;padding:0px;max-width:550px">
+    <div class="modal-header dan" style="border-radius:10px 10px 0 0;margin:0px -1px 0 -1px;">
+      <h3 id="topGreet" style="padding-top:10px;"></h3>
+	  <span class="close" id="close">&times;</span>
+    
+    </div>
+    <div class="modal-body atCenter" style="color:darkblue;" >
+      <h4 id="welcomeMessage" style="padding-top:15px;"></h4>
+      <h6 id="thanks">Ameh Danjuma || Question 3</h6>
+    </div>
+    <div class="modal-footer dan" style="text-align:center;border-radius:0 0 10px 10px;margin:0px -1px 0 -1px;">
+     <h5 id="remaining"  style="padding-top:10px;margin:auto;"></h5>
+    </div>
+  </div>
+
+</div><!--Modal End-->
+
+<!-- <div style="display:block;"><h1>hello</h1></div> -->
+
+<div class="myBorders" id="Portfolio" style="height:auto;min-height:750px;">
+
+
+<img class="center" id="SelectImage" src="..\WebTechAssignment\image\DanjumaPix.jpg" style="height:200px;width:200px;border-radius:50%;margin-bottom:-30px;margin-top:30px;display:block;" alt="Danjuma" />
+
+<h1 class="myHeaders" style="margin:40px;">Danjuma Ameh</h1>
+
+
+<div style="width:100%;text-align:center;">
+<a href="#" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>  
+<a href="#" class="fa fa-facebook"></a>
+
+</div>
+
+<div class="row" style=" margin:auto;font-size:large;font-weight:bold;">
+
+                    <div class="col-lg-3"></div>
+					<div class="col-lg-3" style="padding:20px;text-align:justify"><p class="">My Name is Danjuma Ameh. I am a student of the Department of Computer Science and Mathematics at Brandon University.
+					</p><p><span id="readMore1" style="display:none;">This is my profile page which is part of the requirement to be fulfilled towards my Web Technology Grades.</span><label id="lbl1" onclick="lbl1Click()" style="color:blue;cursor:pointer">Read More...</label> </p></div>
+                   <div class="col-lg-3" style="padding:20px;text-align:justify"></div> <p class="">This template displays how to use HTML, CSS and Javascript to design basic web projects neatly and show my profile.</p>
+				   <p><span id="readMore2" style="display:none;">Thank you for going through my profile as I look forward to hearing from you through the contact me section below.</span><label id="lbl2" onclick="lbl2Click()" style="color:blue;cursor:pointer">Read More...</label></p></div>
+				 				  
+				   <div class="col-lg-3"></div>
+                </div>
+
+
+<div  class="myBorders" id="about" onfocus="makeActive();" style="min-height:700px; background-color:khaki;">
+<h1 class="myHeaders" style="margin-top:10px;">Project PlaceHolders</h1>
+				 <div class="row" style="padding-top:15%;width:80%;margin:auto;" >
+				 <div class="col-lg-4 col-sm-6 text-center mb-4 myImg">
+					
+    <label class="middle" id="imageText">wikipedia.org/wiki/Bird</label>
+	 <a class="" href="https://en.wikipedia.org/wiki/Bird" target="popup" onclick="window.open('https://en.wikipedia.org/wiki/Bird','popup','width=600,height=600'); return false;"><img class="rounded-circle img-fluid d-block mx-auto bounce zoom"  src="..\WebTechAssignment\image\bird.jpg" style="height:200px;width:200px;border-radius:15px;" alt="Bird"></a>
+					<h3>Bird </h3>
+		 <!-- <a href="https://en.wikipedia.org/wiki/Bird"><img class="rounded-circle img-fluid d-block mx-auto bounce zoom"  src="..\WebTechAssignment\image\bird.jpg" style="height:200px;width:200px;border-radius:15px;" alt="Bird"> </a>-->
+        </div>
+           <div class="col-lg-4 col-sm-6 text-center mb-4 myImg">
+		   <a  href="https://en.wikipedia.org/wiki/Horse" target="popup" onclick="window.open('https://en.wikipedia.org/wiki/Horse','popup','width=600,height=600'); return false;"><img class="rounded-circle img-fluid d-block mx-auto bounce zoom"  src="..\WebTechAssignment\image\Horse.jpg" style="height:200px;width:200px;border-radius:15px;" alt="Horse"></a>
+					<h3>Horse</h3>
+    <label class="middle" id="imageText">wikipedia.org/wiki/Horse</label>
+            </div>
+          <div class="col-lg-4 col-sm-6 text-center mb-4 myImg">
+          <a  href="https://en.wikipedia.org/wiki/Squirrel" target="popup" onclick="window.open('https://en.wikipedia.org/wiki/Squirrel','popup','width=600,height=600'); return false;"><img class="rounded-circle img-fluid d-block mx-auto bounce zoom"  src="..\WebTechAssignment\image\squirrel.jpg" style="height:200px;width:200px;border-radius:15px;" alt="Squirrel"></a>
+					<h3>Squirrel </h3>   
+    <label class="middle" id="imageText">wikipedia.org/wiki/Squirrel</label>
+        </div>
+	</div>  <!--RowDiv Close -->
+
+</div>
+
+
+<div  class="myBorders" name="contact" id="contact" style=" background-color:#AFEEEE;text-align:center">
+<h1 class="myHeaders" style="margin-top:10px;">Contact</h1>
+<form >
+ <div style="max-width:700px; margin:auto">
+  <input class="inp" type="text" id="txtName" name="fname" placeholder="name" style="text-transform:capitalize;" required /><br/>
+
+  <input class="inp" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="txtPhoneNumber" name="lname" placeholder="Phone Number" required  /> <br/>
+  
+  <input class="inp" type="text" id="txtEmail" name="lname" style="text-transform:lowercase;" placeholder="EMail" required  /> <br/>
+
+  <textarea class="inp" rows="7" id="txtMessage" style="border-radius:10px;text-transform:uppercase;" placeholder="Please Enter Message" required ></textarea>
+
+</div>
+<button id="btnSubmit" style="color: white; font-size:20px; margin-bottom:10px;background-color:dodgerblue;border-radius:5px;border-style:none;" required onmouseout="returnColor()"  onmouseover="changecolor()" onclick="validateForms()" >Submit</button> 
+
+</form>
+
+<div class="map-responsive">
+ <div class="google-maps text-center" >
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63047.45961779289!2d7.561615571960458!3d9.021163405501706!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9f2efaffbfbbd3d2!2sIkani+Salon!5e0!3m2!1sen!2sng!4v1504713762802" width="532" height="350" frameborder="0" style="border:0;border-radius:5px;"></iframe>
+</div>
+</div>
+</div>
+</div>
+<button onclick="topFunction();makePortfolioActive();" id="myBtn" title="Go to top" >^</button> 
+
+</body>
+
+<script type="text/javascript" src="JavaScript/DanjumaScript.js"></script>
+
+<script type="text/javascript" src="JavaScript/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="JavaScript/bootstrap.js"></script>
+
+
+
+
+
+</html>

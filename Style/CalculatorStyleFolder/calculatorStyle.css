@@ -1,0 +1,49 @@
+.myBody{
+background-color:#87CEFA;
+}
+
+
+
+.button {
+   display: inline-block;
+  padding: 10px 15px 10px 15px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 9px #999;
+  box-shadow: 0 9px #999;
+  margin:7px;
+  }
+    
+    .button:focus {
+  outline: none;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  -webkit-box-shadow: 0 5px #666;
+  box-shadow: 0 5px #666;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+}
+.num{width:70px;max-width:90px;color:white;}
+.oper{width:80px;max-width:120px;color:white;}
+ .science{width:90px;max-width:130px;color:white;}
+ 
+ /*td {border: 2px solid black;}*/
+    
+    input[type=radio] {
+    border: 0px;
+    width: 50%;
+    height: 1.5em;
+        vertical-align:middle;
+}
+   
